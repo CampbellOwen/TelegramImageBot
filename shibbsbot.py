@@ -1,6 +1,7 @@
 from flask import Flask, request
 import os
 import json
+import requests
 app = Flask(__name__)
 
 token = "313551569:AAEImqIDB64Eqa69R_-ybyx6wjNy4eT0g30"
@@ -27,6 +28,9 @@ def hello():
         'results': image_responses
     }
     print json.dumps(answer)
+
+    r = requests.post('https://api.telegram.org/bot313551569:AAEImqIDB64Eqa69R_-ybyx6wjNy4eT0g30/answerInlineQuery', data=answer)
+    print r.status_code
     return json.dumps(answer)
 
 if __name__ == "__main__":
