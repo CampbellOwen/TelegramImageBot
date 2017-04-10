@@ -10,6 +10,8 @@ def hello():
         print i
     print request.form.get("update_id", "no id?")
     print request.form.get("inline_query", "Not inline?")
+
+    print request.data
     return "Hello World!"
 
 if __name__ == "__main__":
