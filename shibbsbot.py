@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 token = "313551569:AAEImqIDB64Eqa69R_-ybyx6wjNy4eT0g30"
 
-@app.route("/shibbs")
+@app.route("/shibbs", methods=['POST'])
 def hello():
     print request.form.get("update_id", "no id?")
     print request.form.get("inline_query", "Not inline?")
