@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 import os
 app = Flask(__name__)
 
@@ -6,6 +6,8 @@ token = "313551569:AAEImqIDB64Eqa69R_-ybyx6wjNy4eT0g30"
 
 @app.route("/shibbs")
 def hello():
+    print request.form.get("update_id", "no id?")
+    print request.form.get("inline_query", "Not inline?")
     return "Hello World!"
 
 if __name__ == "__main__":
