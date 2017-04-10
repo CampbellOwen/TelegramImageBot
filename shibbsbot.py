@@ -11,7 +11,7 @@ i = 0
 for img in image_urls:
     image_responses.append({
         'type':'photo',
-        'id': i,
+        'id': str(i),
         'photo_url': img,
         'thumb_url': img
     })
