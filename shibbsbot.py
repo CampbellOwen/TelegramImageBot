@@ -25,7 +25,7 @@ def hello():
 
     answer = {
         'inline_query_id' : str(jsonResponse.get('update_id', 'no query?')),
-        'results': image_responses
+        'results': json.dumps(image_responses)
     }
     print json.dumps(answer)
 
