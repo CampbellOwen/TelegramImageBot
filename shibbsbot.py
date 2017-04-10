@@ -31,6 +31,7 @@ def hello():
 
     r = requests.post('https://api.telegram.org/bot313551569:AAEImqIDB64Eqa69R_-ybyx6wjNy4eT0g30/answerInlineQuery', data=json.dumps(answer))
     print r.status_code
+    print r.text
     return json.dumps(answer)
 
 if __name__ == "__main__":
