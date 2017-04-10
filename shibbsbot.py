@@ -6,12 +6,9 @@ token = "313551569:AAEImqIDB64Eqa69R_-ybyx6wjNy4eT0g30"
 
 @app.route("/shibbs", methods=['POST'])
 def hello():
-    for i in request.form:
-        print i
-    print request.form.get("update_id", "no id?")
-    print request.form.get("inline_query", "Not inline?")
-
-    print request.get_json()
+    jsonResponse = request.get_json()
+    print jsonResponse.get('inline_query', 'no query?')
+    print jsonResponse.get('update_id', 'no query?')
     return "Hello World!"
 
 if __name__ == "__main__":
