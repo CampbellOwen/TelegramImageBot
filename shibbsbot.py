@@ -11,7 +11,7 @@ def hello():
     print request.form.get("update_id", "no id?")
     print request.form.get("inline_query", "Not inline?")
 
-    print request.data
+    print request.get_json()
     return "Hello World!"
 
 if __name__ == "__main__":
