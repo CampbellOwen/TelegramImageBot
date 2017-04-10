@@ -29,7 +29,7 @@ def hello():
     }
     print json.dumps(answer)
 
-    r = requests.post('https://api.telegram.org/bot313551569:AAEImqIDB64Eqa69R_-ybyx6wjNy4eT0g30/answerInlineQuery', data=answer)
+    r = requests.post('https://api.telegram.org/bot313551569:AAEImqIDB64Eqa69R_-ybyx6wjNy4eT0g30/answerInlineQuery', data=json.dumps(answer)
     print r.status_code
     return json.dumps(answer)
 
