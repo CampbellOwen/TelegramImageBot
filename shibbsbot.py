@@ -20,8 +20,10 @@ for img in image_urls:
 @app.route("/shibbs", methods=['POST'])
 def hello():
     jsonResponse = request.get_json()
-    for key,val in jsonResponse:
-        print key + ": " + val
+    print "Printing JSON response"
+    for val in jsonResponse:
+        print val
+    print ""
     print jsonResponse.get('inline_query', 'no query?')
     print jsonResponse.get('update_id', 'no query?')
 
