@@ -23,7 +23,7 @@ def hello():
     print "Printing JSON response"
     for val in jsonResponse:
         print val
-    print ""
+    print json.dumps(jsonResponse)
     print jsonResponse.get('inline_query', 'no query?')
     print jsonResponse.get('update_id', 'no query?')
 
