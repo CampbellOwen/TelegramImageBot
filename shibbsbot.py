@@ -5,7 +5,16 @@ import requests
 app = Flask(__name__)
 
 token = "313551569:AAEImqIDB64Eqa69R_-ybyx6wjNy4eT0g30"
-image_urls = ['http://i.imgur.com/6cjQfgQ.jpg','http://i.imgur.com/XQrb6D3.jpg', 'http://i.imgur.com/CWBmr04.jpg', 'http://i.imgur.com/nUIL4CA.jpg', 'http://i.imgur.com/bcpaMqK.jpg']
+image_urls = [
+    'http://i.imgur.com/6cjQfgQ.jpg',
+    'http://i.imgur.com/XQrb6D3.jpg', 
+    'http://i.imgur.com/CWBmr04.jpg', 
+    'http://i.imgur.com/nUIL4CA.jpg', 
+    'http://i.imgur.com/bcpaMqK.jpg',
+    'http://i.imgur.com/1yAH4qi.jpg',
+    'http://i.imgur.com/VkJoQHO.jpg',
+    'http://i.imgur.com/fPMyYZY.jpg',
+    'http://i.imgur.com/t7LpSLv.jpg']
 image_responses = []
 i = 0
 for img in image_urls:
@@ -20,13 +29,7 @@ for img in image_urls:
 @app.route("/shibbs", methods=['POST'])
 def hello():
     jsonResponse = request.get_json()
-    print "Printing JSON response"
-    for val in jsonResponse:
-        print val
-    print json.dumps(jsonResponse)
-    print jsonResponse.get('inline_query', 'no query?')
-    print jsonResponse.get('update_id', 'no query?')
-
+    
     answer = {
         'inline_query_id' : str(jsonResponse.get('inline_query', 'no query?').get('id', 'no id?')),
         'results': json.dumps(image_responses)
