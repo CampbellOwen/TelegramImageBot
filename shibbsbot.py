@@ -14,7 +14,15 @@ image_urls = [
     'http://i.imgur.com/1yAH4qi.jpg',
     'http://i.imgur.com/VkJoQHO.jpg',
     'http://i.imgur.com/fPMyYZY.jpg',
-    'http://i.imgur.com/t7LpSLv.jpg']
+    'http://i.imgur.com/t7LpSLv.jpg',
+    'http://i.imgur.com/YRzHSde.jpg',
+    'http://i.imgur.com/AdxTd2K.jpg',
+    'http://i.imgur.com/x389gSi.jpg',
+    'http://i.imgur.com/TLWA5YD.jpg',
+    'http://i.imgur.com/bmWacG8.jpg',
+    'http://i.imgur.com/pnfiPfh.jpg',
+    'http://i.imgur.com/ZydLXjo.jpg',
+    'http://i.imgur.com/qcGoXaS.jpg']
 image_responses = []
 i = 0
 for img in image_urls:
