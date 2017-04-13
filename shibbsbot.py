@@ -38,9 +38,12 @@ for img in image_urls:
 def hello():
     jsonResponse = request.get_json()
     
+    caption = jsonResponse.get('inline_query', {}).get('query', '')
+
     answer = {
-        'inline_query_id' : str(jsonResponse.get('inline_query', 'no query?').get('id', 'no id?')),
-        'results': json.dumps(image_responses)
+        'inline_query_id' : str(jsonResponse.get('inline_query', {}).get('id', 'no id?')),
+        'results': json.dumps(image_responses),
+        'caption': caption
     }
     print json.dumps(answer)
 
