@@ -39,12 +39,13 @@ def hello():
     jsonResponse = request.get_json()
     
     caption = jsonResponse.get('inline_query', {}).get('query', '')
-    print json.dumps(jsonResponse)
+    print json.dumps(jsonResponse, indent=4)
     print caption
+    for img in image_responses:
+        img['caption'] = caption
     answer = {
         'inline_query_id' : str(jsonResponse.get('inline_query', {}).get('id', 'no id?')),
         'results': json.dumps(image_responses),
-        'caption': caption
     }
     r = requests.post('https://api.telegram.org/bot313551569:AAEImqIDB64Eqa69R_-ybyx6wjNy4eT0g30/answerInlineQuery', params=answer)
     print r.status_code
