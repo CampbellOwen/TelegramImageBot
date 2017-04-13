@@ -40,6 +40,7 @@ def hello():
     
     caption = jsonResponse.get('inline_query', {}).get('query', '')
 
+    print caption
     answer = {
         'inline_query_id' : str(jsonResponse.get('inline_query', {}).get('id', 'no id?')),
         'results': json.dumps(image_responses),
