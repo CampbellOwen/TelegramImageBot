@@ -16,7 +16,7 @@ for img in config.image_urls:
     })
     i += 1
 
-@app.route("/shibbs", methods=['POST'])
+@app.route("/{0}".format(config.endpoint), methods=['POST'])
 def hello():
     jsonResponse = request.get_json()
     
