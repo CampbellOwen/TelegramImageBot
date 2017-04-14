@@ -22,8 +22,8 @@ def hello():
         image_responses.append({
             'type': 'photo',
             'id': image.id,
-            'photo_url': image.url,
-            'thumb_url': image.url,
+            'photo_url': image.link,
+            'thumb_url': image.link,
             'caption': caption
         })
 
