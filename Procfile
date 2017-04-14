@@ -1,1 +1,1 @@
-web: python shibbsbot.py
+web: python bot.py
